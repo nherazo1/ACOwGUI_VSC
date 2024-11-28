@@ -4,7 +4,7 @@ from tkinter import messagebox
 import shutil
 from tkinter.filedialog import askopenfilename
 import os
-from out.build.module_name import *
+from build.module_name import *
 
 
 class MyGUI:
