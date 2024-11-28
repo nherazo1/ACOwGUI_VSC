@@ -4,9 +4,9 @@
 #include <random>
 #include <chrono>
 #include <cmath>
-#include <pybind11/pybind11.h>
-#include <pybind11/embed.h>
-
+#include "pybind11/include/pybind11/pybind11.h"
+#include "pybind11/include/pybind11/embed.h"
+#include <stdio.h>
 
 std::string results = "These are your results: ";
 std::string *resultsPanel = &results;
@@ -39,10 +39,15 @@ long ConsoleInput(){
     return number; 
 }
 
-int ACOfunct() {
+std::string ACOfunct() {
     /*
     This is the acoModule ACO algorithm
     */
+
+    /* pybind11::scoped_interpreter guard{};
+
+    auto ACO_GUI_module = pybind11::module::import("ACO_GUI");
+    auto p_results_function = ACO_GUI_module.attr("m.print_results"); */
 
     ////-------------------------------------------------------------------
     //  Load data
@@ -720,7 +725,7 @@ int ACOfunct() {
     RunTime = TimeF - TimeI;
 
     std::cout << "The Run Time is: " + std::to_string(RunTime) + "\n";
-    return 0;
+    return *resultsPanel;
 }
 
 PYBIND11_MODULE(module_name, module){ // arguments are name we give to the module and a module identifier (module)
@@ -728,3 +733,4 @@ PYBIND11_MODULE(module_name, module){ // arguments are name we give to the modul
     module.def("ACOfunct", &ACOfunct); // define C++ function in the python module with a name and a function pointer
 
 }
+

@@ -64,6 +64,7 @@ class MyGUI:
 
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
         self.root.mainloop()
+        self.results = "These are your results: ..."
 
     def show_message(self):
         if self.check_state.get() == 0:
@@ -94,18 +95,20 @@ class MyGUI:
                                                                           "you can proceed now to run the algorithm")
             self.data_loaded = True
 
+    def print_results(self, mytext):
+        self.textbox.insert(tk.INSERT, mytext)
+
     def run_router(self):
         if self.data_loaded:
             #os.system("cmake .. && make && python ../test.py")
             os.system("/opt/homebrew/bin/cmake -B/Users/nherazo/Developer/PythonProjects/PyACOwGUI/build -S/Users/"
                       "nherazo/Developer/PythonProjects/PyACOwGUI && cd /Users/nherazo/Developer/PythonProjects/"
                       "PyACOwGUI/build && make")
-            ACOfunct()
+            self.results = ACOfunct()
+            self.print_results(self.results)
         else:
             messagebox.showinfo(title="Data not available", message="You did not upload any data file")
 
-    def print_results(self, mytext):
-        self.textbox.insert(tk.INSERT, mytext)
 
 m = MyGUI()
 
