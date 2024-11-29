@@ -7,15 +7,17 @@
 #include "pybind11/include/pybind11/pybind11.h"
 #include "pybind11/include/pybind11/embed.h"
 #include <stdio.h>
+#include <pybind11/stl.h>
+#include <vector>
 
 std::string results = "These are your results: ";
 std::string *resultsPanel = &results;
 
-/* // Comparator function
-bool comp(int a, int b){
-    return a > b;
-}
- */
+struct Vector2D {
+    std::vector<std::vector<int>> bestRoute_f;
+};
+Vector2D f_solution {};
+
 void ShowResults(const std::string &newText) {
     std::string *currentText = resultsPanel;
     *currentText += newText; // Append new text with a newline
@@ -54,7 +56,7 @@ std::string ACOfunct() {
     ////-------------------------------------------------------------------
 
     // Parameters and variables initialization
-    int Iter = 0, maxIterations = 1000;
+    int Iter = 0, maxIterations = 20;
     double RunTime;
     int MaxRunTime = 1200;
     std::time_t TimeI = std::time(nullptr);
@@ -725,12 +727,21 @@ std::string ACOfunct() {
     RunTime = TimeF - TimeI;
 
     std::cout << "The Run Time is: " + std::to_string(RunTime) + "\n";
+    f_solution.bestRoute_f = bestRoute;
+
     return *resultsPanel;
+}
+
+std::vector<std::vector<int>> GetRoutes(){
+    return f_solution.bestRoute_f;
 }
 
 PYBIND11_MODULE(module_name, module){ // arguments are name we give to the module and a module identifier (module)
     module.doc() = "Pybind11Module";
     module.def("ACOfunct", &ACOfunct); // define C++ function in the python module with a name and a function pointer
+    module.def("GetRoutes", &GetRoutes);
+    pybind11::class_<Vector2D>(module, "Vector2D")
+    .def_readwrite ("bestRoute_f", &Vector2D::bestRoute_f);
 
 }
 

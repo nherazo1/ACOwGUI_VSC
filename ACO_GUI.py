@@ -64,7 +64,7 @@ class MyGUI:
 
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
         self.root.mainloop()
-        self.results = "These are your results: ..."
+        self.results = ""
 
     def show_message(self):
         if self.check_state.get() == 0:
@@ -105,7 +105,10 @@ class MyGUI:
                       "nherazo/Developer/PythonProjects/PyACOwGUI && cd /Users/nherazo/Developer/PythonProjects/"
                       "PyACOwGUI/build && make")
             self.results = ACOfunct()
-            self.print_results(self.results)
+            results_txt = self.results
+            routes = GetRoutes()
+            self.print_results(results_txt)
+            print(routes)
         else:
             messagebox.showinfo(title="Data not available", message="You did not upload any data file")
 
