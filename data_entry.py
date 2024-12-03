@@ -1,0 +1,37 @@
+import customtkinter
+from tkinter import messagebox
+
+class App(customtkinter.CTk):  
+    def __init__(self):  
+        super().__init__()  
+        self.minsize(400, 300)
+        self.value = None  # Store the integer value here  
+        self.frame = customtkinter.CTkFrame(self) 
+        self.title("Vehicle Capacity Setup")  
+        label = customtkinter.CTkLabel(self.frame, text="Configure Vehicle Capacities")  
+        label.pack(pady=20)  
+        self.frame.pack(padx=20, pady=20)  
+        self.entry = customtkinter.CTkEntry(self.frame, placeholder_text="Enter an integer", text_color='grey', width=300, height=40)  
+        self.entry.pack(pady=10)  
+        self.submit_button = customtkinter.CTkButton(self.frame, text="Submit Veh CAP", command=self.get_integer)  
+        self.submit_button.pack(pady=10)  
+
+    def get_integer(self):  
+        try:  
+            self.value = int(self.entry.get())
+            self.after(100, self.destroy())  # Schedule closing the application with a slight delay after submission
+            self.quit()
+        except ValueError:  
+            messagebox.showinfo(title="Value error", message="Please enter a valid integer.") 
+
+    def run_app(self):  
+        self.mainloop()  # Start the application loop
+        return self.value  # Return the integer value after the app closes  
+
+def launch_app2(item):  
+    app = App()  
+    label = customtkinter.CTkLabel(app.frame, text="Enter capacity for Vehicle: " + str(item))  
+    label.pack(pady=20) 
+    result = app.run_app()  # This will run the app and wait for user input  
+    return result  # Return the result to C++
+

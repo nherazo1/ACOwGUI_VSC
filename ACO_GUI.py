@@ -6,6 +6,14 @@ from tkinter.filedialog import askopenfilename
 import os
 from build.module_name import *
 
+#### FOR MAP ----------------------------------- ####
+import plotly as py
+import plotly.graph_objs as go
+from plotly.offline import download_plotlys, init_notebook_mode, plot, iplot
+import folium
+import pandas as pd
+#### FOR MAP ----------------------------------- ####
+
 
 class MyGUI:
     def __init__(self):
@@ -96,6 +104,7 @@ class MyGUI:
             self.data_loaded = True
 
     def print_results(self, mytext):
+        self.textbox.delete("0.0", "end")
         self.textbox.insert(tk.INSERT, mytext)
 
     def run_router(self):
@@ -104,11 +113,13 @@ class MyGUI:
             os.system("/opt/homebrew/bin/cmake -B/Users/nherazo/Developer/PythonProjects/PyACOwGUI/build -S/Users/"
                       "nherazo/Developer/PythonProjects/PyACOwGUI && cd /Users/nherazo/Developer/PythonProjects/"
                       "PyACOwGUI/build && make")
+            results_txt = "Your results are being processed, please wait, the algorithm will take a maximum time of 20 minutes. Your results will appear below..."
+            self.print_results(results_txt)
             self.results = ACOfunct()
             results_txt = self.results
             routes = GetRoutes()
             self.print_results(results_txt)
-            print(routes)
+            #print(routes)
         else:
             messagebox.showinfo(title="Data not available", message="You did not upload any data file")
 
@@ -116,8 +127,4 @@ class MyGUI:
 m = MyGUI()
 
 m
-
-
-
-
 

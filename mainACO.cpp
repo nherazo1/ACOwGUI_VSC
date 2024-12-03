@@ -10,7 +10,7 @@
 #include <pybind11/stl.h>
 #include <vector>
 
-std::string results = "These are your results: ";
+std::string results = "These are your results: \n\n";
 std::string *resultsPanel = &results;
 
 struct Vector2D {
@@ -46,10 +46,12 @@ std::string ACOfunct() {
     This is the acoModule ACO algorithm
     */
 
-    /* pybind11::scoped_interpreter guard{};
+    /* pybind11::scoped_interpreter guard{};  */
 
-    auto ACO_GUI_module = pybind11::module::import("ACO_GUI");
+    auto data_entry_module = pybind11::module::import("data_entry_");
+    /* auto ACO_GUI_module = pybind11::module::import("ACO_GUI");
     auto p_results_function = ACO_GUI_module.attr("m.print_results"); */
+    long getVehFleet = data_entry_module.attr("launch_app")().cast<long>();
 
     ////-------------------------------------------------------------------
     //  Load data
@@ -63,8 +65,10 @@ std::string ACOfunct() {
     long double ObjDistGlobal = 20000000000;
     const long Arg = 10;
     long NumVeh;
-    std::cout << "Please enter the number of vehicles as an integer below: \n";
-    NumVeh = ConsoleInput();
+    //std::cout << "Please enter the number of vehicles as an integer below: \n";
+    //NumVeh = ConsoleInput();
+    NumVeh = getVehFleet;
+
     //Pheromone parameters
     const double T0 = 0.85, B = 2.3, q0 = 0.85, a = 0.1;
     std::vector<std::vector<double>> InstanceData;
@@ -145,7 +149,12 @@ std::string ACOfunct() {
     std::string CapList;
 
     for (long x = 0; x < Cap.size(); x++) {
-        Cap[x] = ConsoleInput();
+        /*std::cout << "Insert the capacity of Vehicle " + std::to_string(x + 1) + " here\n";
+        std::cin >> Cap[x]; //getVehFleet*/
+        auto cap_data_entry_module = pybind11::module::import("data_entry");
+        long getVehCap = cap_data_entry_module.attr("launch_app2")(x + 1).cast<long>();
+        long VehCapacity = getVehCap;
+        Cap[x] = VehCapacity;
         CapList += "V" + std::to_string(x + 1) + " - " + std::to_string(Cap[x]) + ", ";
     }
 
@@ -638,13 +647,13 @@ std::string ACOfunct() {
                 ShowResults("*\n");
                 ShowResults("*\n");
                 ShowResults("*\n");
-                std::cout << *resultsPanel;
+                //std::cout << *resultsPanel;
 
             }else
             {
                 ShowResults("- Current distance: " + std::to_string(currentDist)  + " Global distance: "
                 + std::to_string(ObjDistGlobal) + "\n");
-                std::cout << *resultsPanel;
+                //std::cout << *resultsPanel;
             }
             if (Iter == maxIterations)
             {
@@ -670,7 +679,7 @@ std::string ACOfunct() {
                     ShowResults("The capacity required for this vehicle is: "
                     + std::to_string(ExcessCapacity) + "\n");
                 }
-                std::cout << *resultsPanel;
+                //std::cout << *resultsPanel;
             }
 
 
@@ -712,7 +721,7 @@ std::string ACOfunct() {
                 std::cout << std::endl;
             }
             ShowResults("\n\nNumber of vehicles used: " + std::to_string(VehsUsed + 1) + "\n\n");
-            std::cout << *resultsPanel;
+            //std::cout << *resultsPanel;
             break;
         }
 
@@ -726,7 +735,7 @@ std::string ACOfunct() {
     std::time_t TimeF = std::time(nullptr);
     RunTime = TimeF - TimeI;
 
-    std::cout << "The Run Time is: " + std::to_string(RunTime) + "\n";
+    ShowResults("\nThe Run Time is: " + std::to_string(RunTime) + "\n");
     f_solution.bestRoute_f = bestRoute;
 
     return *resultsPanel;
