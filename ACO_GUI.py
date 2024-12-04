@@ -4,14 +4,17 @@ from tkinter import messagebox
 import shutil
 from tkinter.filedialog import askopenfilename
 import os
+import random
 from build.module_name import *
 
 #### FOR MAP ----------------------------------- ####
 import plotly as py
 import plotly.graph_objs as go
-from plotly.offline import download_plotlys, init_notebook_mode, plot, iplot
+from plotly.offline import init_notebook_mode, plot, iplot
 import folium
 import pandas as pd
+from IPython.display import display
+import webbrowser
 #### FOR MAP ----------------------------------- ####
 
 
@@ -73,6 +76,8 @@ class MyGUI:
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
         self.root.mainloop()
         self.results = ""
+        self.routes = []
+        self.t_routes = []
 
     def show_message(self):
         if self.check_state.get() == 0:
@@ -107,6 +112,77 @@ class MyGUI:
         self.textbox.delete("0.0", "end")
         self.textbox.insert(tk.INSERT, mytext)
 
+    # Function to generate a random color in hex format  
+    def random_color(self):  
+        return "#{:06x}".format(random.randint(0, 0xFFFFFF)) 
+
+    def displayMap(self):
+        ### Load data ----------###
+        data = 'data.csv'
+        df = pd.read_csv(data)
+
+        ### Create map ----------###
+        routesMap = folium.Map(location=[df['xcoord.'].iloc[0], df['ycoord.'].iloc[0]], control_scale=True, zoom_start=15)
+        fg = folium.FeatureGroup(name='routing')
+
+        for i in range(len(df.index)):
+            ndemand = df['demand'].iloc[i]
+            f_ndemand = "{:,.0f}".format(ndemand)
+            fg.add_child(folium.Marker(location=[df['xcoord.'].iloc[i], df['ycoord.'].iloc[i]], 
+                                    popup=folium.Popup(f"""<h2>{df['cust no.'].iloc[i]}</h2> <br>
+                                    <h2>Demand = {str(f_ndemand)}</h2> <br>
+                                    <h2>ReadyTime = {df['ready time'].iloc[i]}</h2>""",
+                                                        max_width=300)))
+        routesMap.add_child(fg)
+
+        # Define marker locations and labels  
+        marker_locations = []
+        for i in range(len(df.index)):
+            marker_locations.append((df['xcoord.'].iloc[i], df['ycoord.'].iloc[i])) 
+
+        
+        color = [self.random_color() for i in self.t_routes]
+
+        """sequence = []
+        # Define the order in which to connect the markers (0-based index)  
+        for i in range(len(self.t_routes)):
+            for j in range(len(self.t_routes[i])):
+                if self.t_routes[i][1] != 0:
+                    sequence[i][j] = self.t_routes[i][j]  # This means we'll connect Marker 1 -> Marker 2 -> Marker 3 -> Marker 4 -> Marker 5  
+
+        sequence = [[element for element in row] for row in self.t_routes]"""
+
+        # Create a list of coordinates to pass to PolyLine  
+        line_coordinates = []
+
+        line_coordinates = [[marker_locations[i] for i in row] for row in self.t_routes]  
+
+        # Add a PolyLine to connect the markers  
+        for item in range(len(line_coordinates)):
+            folium.PolyLine(locations=line_coordinates[item], color=color[item], weight=5, opacity=0.7).add_to(routesMap)  
+
+        """# Optionally, add markers for the lines' start and end if needed  
+        folium.Marker(  
+            location=line_coordinates[0],   
+            popup='Start',  
+            icon=folium.Icon(color='green')  
+        ).add_to(routesMap)  
+
+        folium.Marker(  
+            location=line_coordinates[-1],   
+            popup='End',  
+            icon=folium.Icon(color='red')  
+        ).add_to(routesMap)"""
+
+        routesMap.save('routesMap.html')
+
+        # Get the absolute path to the HTML file  
+        map_path = os.path.abspath('routesMap.html')  
+
+        # Specify the Safari browser  
+        safari_path = 'open -a "/Applications/Safari.app" %s'  # This works on MacOS  
+        webbrowser.get(safari_path).open('file://' + map_path)
+
     def run_router(self):
         if self.data_loaded:
             #os.system("cmake .. && make && python ../test.py")
@@ -117,9 +193,21 @@ class MyGUI:
             self.print_results(results_txt)
             self.results = ACOfunct()
             results_txt = self.results
-            routes = GetRoutes()
+            self.routes = GetRoutes()
+
+            #Trim routes that come with extra ceros from C++
+            self.t_routes = [[element for j, element in enumerate(row) if j == 0 or element != 0] for row in self.routes]
+
+            # Add DC node to the end of each route  
+            value_to_add = 0  
+
+            # Updating the list with the DC node added at the end of each route  
+            self.t_routes = [row + [value_to_add] for row in self.t_routes]  
+
+
             self.print_results(results_txt)
-            #print(routes)
+            self.displayMap()
+            print(self.t_routes)
         else:
             messagebox.showinfo(title="Data not available", message="You did not upload any data file")
 
@@ -127,4 +215,5 @@ class MyGUI:
 m = MyGUI()
 
 m
+
 

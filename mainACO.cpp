@@ -603,6 +603,9 @@ std::string ACOfunct() {
             CapOverflowSW = false;
             ObjDistGlobal = currentDist;
             //std::time_t TimeIbroute = std::time(nullptr);
+            // Resetting the entire 2D vector to zero  
+            bestRoute.assign(bestRoute.size(), std::vector<int>(bestRoute[0].size(), 0)); // Reassigns each row to a vector of zeros  
+
             for (int i = 0; i < numVehAssig + 1; i++)
             {
                 for (int j = 0; j < PosY[i] + 1; j++)
