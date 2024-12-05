@@ -58,12 +58,14 @@ class MyGUI:
         self.sl_area = tk.Frame(self.root, width=90, height=185, bg='lightgrey')
         self.sl_area.pack(fill='both', padx=10, pady=10, expand=True)
 
-        self.button = ctk.CTkButton(self.sl_area, text="RUN", font=('Arial', 18), command=self.run_router)
+        self.runbtn = ctk.CTkButton(self.sl_area, text="RUN", font=('Arial', 18), command=self.run_router)
+        self.vizbtn = ctk.CTkButton(self.sl_area, text="Visualize Route", font=('Arial', 18), command=self.displayMap)
 
         self.textbox = tk.Text(self.sl_area, height=15, font=('Arial', 16))
         self.textbox.bind("<KeyPress>", self.shortcut)
-        self.button.grid(padx=10, pady=10, column=0, row=0)
-        self.textbox.grid(padx=10, pady=10, column=1, row=0)
+        self.runbtn.grid(padx=10, pady=5, column=0, row=0)
+        self.vizbtn.grid(padx=10, pady=5, column=0, row=1)
+        self.textbox.grid(padx=10, pady=10, column=1, row=0, rowspan=2)
 
         self.check_state = ctk.IntVar()
 
@@ -121,17 +123,25 @@ class MyGUI:
         data = 'data.csv'
         df = pd.read_csv(data)
 
+        RouteNo = launch_app()
+
+        while RouteNo not in range(len(self.t_routes)):
+            messagebox.showinfo(title="Data loading failed", message="You did not select a valid route")
+            RouteNo = launch_app()
+
+        sel_df = df[df["cust no."].isin(self.t_routes[RouteNo - 1])]
+
         ### Create map ----------###
-        routesMap = folium.Map(location=[df['xcoord.'].iloc[0], df['ycoord.'].iloc[0]], control_scale=True, zoom_start=15)
+        routesMap = folium.Map(location=[sel_df['xcoord.'].iloc[0], sel_df['ycoord.'].iloc[0]], control_scale=True, zoom_start=15)
         fg = folium.FeatureGroup(name='routing')
 
-        for i in range(len(df.index)):
-            ndemand = df['demand'].iloc[i]
+        for i in range(len(sel_df.index)):
+            ndemand = sel_df['demand'].iloc[i]
             f_ndemand = "{:,.0f}".format(ndemand)
-            fg.add_child(folium.Marker(location=[df['xcoord.'].iloc[i], df['ycoord.'].iloc[i]], 
-                                    popup=folium.Popup(f"""<h2>{df['cust no.'].iloc[i]}</h2> <br>
+            fg.add_child(folium.Marker(location=[sel_df['xcoord.'].iloc[i], sel_df['ycoord.'].iloc[i]], 
+                                    popup=folium.Popup(f"""<h2>{sel_df['cust no.'].iloc[i]}</h2> <br>
                                     <h2>Demand = {str(f_ndemand)}</h2> <br>
-                                    <h2>ReadyTime = {df['ready time'].iloc[i]}</h2>""",
+                                    <h2>ReadyTime = {sel_df['ready time'].iloc[i]}</h2>""",
                                                         max_width=300)))
         routesMap.add_child(fg)
 
@@ -140,28 +150,15 @@ class MyGUI:
         for i in range(len(df.index)):
             marker_locations.append((df['xcoord.'].iloc[i], df['ycoord.'].iloc[i])) 
 
-        
-        color = [self.random_color() for i in self.t_routes]
-
-        """sequence = []
-        # Define the order in which to connect the markers (0-based index)  
-        for i in range(len(self.t_routes)):
-            for j in range(len(self.t_routes[i])):
-                if self.t_routes[i][1] != 0:
-                    sequence[i][j] = self.t_routes[i][j]  # This means we'll connect Marker 1 -> Marker 2 -> Marker 3 -> Marker 4 -> Marker 5  
-
-        sequence = [[element for element in row] for row in self.t_routes]"""
+        color = self.random_color()
 
         # Create a list of coordinates to pass to PolyLine  
-        line_coordinates = []
-
-        line_coordinates = [[marker_locations[i] for i in row] for row in self.t_routes]  
+        line_coordinates = [marker_locations[i] for i in self.t_routes[RouteNo - 1]]
 
         # Add a PolyLine to connect the markers  
-        for item in range(len(line_coordinates)):
-            folium.PolyLine(locations=line_coordinates[item], color=color[item], weight=5, opacity=0.7).add_to(routesMap)  
+        folium.PolyLine(locations=line_coordinates, color=color, weight=5, opacity=0.7).add_to(routesMap)  
 
-        """# Optionally, add markers for the lines' start and end if needed  
+        # Optionally, add markers for the lines' start and end if needed  
         folium.Marker(  
             location=line_coordinates[0],   
             popup='Start',  
@@ -172,7 +169,7 @@ class MyGUI:
             location=line_coordinates[-1],   
             popup='End',  
             icon=folium.Icon(color='red')  
-        ).add_to(routesMap)"""
+        ).add_to(routesMap)
 
         routesMap.save('routesMap.html')
 
@@ -203,14 +200,42 @@ class MyGUI:
 
             # Updating the list with the DC node added at the end of each route  
             self.t_routes = [row + [value_to_add] for row in self.t_routes]  
-
-
             self.print_results(results_txt)
-            self.displayMap()
-            print(self.t_routes)
         else:
             messagebox.showinfo(title="Data not available", message="You did not upload any data file")
 
+class RouteSelectApp(ctk.CTk):  
+    def __init__(self):  
+        super().__init__()  
+        self.minsize(400, 300)
+        self.value = None  # Store the integer value here  
+        self.frame = ctk.CTkFrame(self)
+        # Add some content to the frame  
+        self.title("Route Visualization Selector")  
+        label = ctk.CTkLabel(self.frame, text="Select the route to visualize")  
+        label.pack(pady=20) 
+        self.frame.pack(padx=20, pady=20)  
+        self.entry = ctk.CTkEntry(self.frame, placeholder_text="Enter a No. of a route (integer)", text_color='grey', width=300, height=40)  
+        self.entry.pack(pady=10)  
+        self.submit_button = ctk.CTkButton(self.frame, text="Submit route", command=self.get_integer)  
+        self.submit_button.pack(pady=10)  
+
+    def get_integer(self):  
+        try:  
+            self.value = int(self.entry.get())
+            self.after(100, self.destroy())  # Schedule closing the application with a slight delay after submission
+            self.quit()
+        except ValueError:  
+            messagebox.showinfo(title="Value error", message="Please enter a valid integer.") 
+
+    def run_app(self):  
+        self.mainloop()  # Start the application loop
+        return self.value  # Return the integer value after the app closes  
+
+def launch_app():  
+    app = RouteSelectApp()  
+    result = app.run_app()  # This will run the app and wait for user input  
+    return result  # Return the result to C++
 
 m = MyGUI()
 

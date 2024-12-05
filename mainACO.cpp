@@ -58,7 +58,7 @@ std::string ACOfunct() {
     ////-------------------------------------------------------------------
 
     // Parameters and variables initialization
-    int Iter = 0, maxIterations = 20;
+    int Iter = 0, maxIterations = 1000;
     double RunTime;
     int MaxRunTime = 1200;
     std::time_t TimeI = std::time(nullptr);
