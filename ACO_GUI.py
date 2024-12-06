@@ -4,6 +4,7 @@ from tkinter import messagebox
 import shutil
 from tkinter.filedialog import askopenfilename
 import os
+import ast
 import random
 from build.module_name import *
 
@@ -60,12 +61,16 @@ class MyGUI:
 
         self.runbtn = ctk.CTkButton(self.sl_area, text="RUN", font=('Arial', 18), command=self.run_router)
         self.vizbtn = ctk.CTkButton(self.sl_area, text="Visualize Route", font=('Arial', 18), command=self.displayMap)
+        self.savebtn = ctk.CTkButton(self.sl_area, text="Save Route Planning", font=('Arial', 18), command=self.save_to_file)
+        self.loadbtn = ctk.CTkButton(self.sl_area, text="Load last Route Planning", font=('Arial', 18), command=self.load_from_file)
 
         self.textbox = tk.Text(self.sl_area, height=15, font=('Arial', 16))
         self.textbox.bind("<KeyPress>", self.shortcut)
         self.runbtn.grid(padx=10, pady=5, column=0, row=0)
         self.vizbtn.grid(padx=10, pady=5, column=0, row=1)
-        self.textbox.grid(padx=10, pady=10, column=1, row=0, rowspan=2)
+        self.savebtn.grid(padx=10, pady=5, column=0, row=2)
+        self.loadbtn.grid(padx=10, pady=5, column=0, row=3)
+        self.textbox.grid(padx=10, pady=10, column=1, row=0, rowspan=4)
 
         self.check_state = ctk.IntVar()
 
@@ -80,6 +85,7 @@ class MyGUI:
         self.results = ""
         self.routes = []
         self.t_routes = []
+        self.routePlan = [] 
 
     def show_message(self):
         if self.check_state.get() == 0:
@@ -119,15 +125,20 @@ class MyGUI:
         return "#{:06x}".format(random.randint(0, 0xFFFFFF)) 
 
     def displayMap(self):
+        
+        if not hasattr(self, 't_routes'):
+            messagebox.showinfo(title="Map display failed", message="There are no results to display")
+            return 0
+        
         ### Load data ----------###
         data = 'data.csv'
         df = pd.read_csv(data)
 
         RouteNo = launch_app()
 
-        while RouteNo not in range(len(self.t_routes)):
-            messagebox.showinfo(title="Data loading failed", message="You did not select a valid route")
-            RouteNo = launch_app()
+        if not (isinstance(RouteNo, int) and 1 <= RouteNo <= len(self.t_routes)):
+            messagebox.showinfo(title="Route visualization failed", message="You did not select a valid route")
+            return 0
 
         sel_df = df[df["cust no."].isin(self.t_routes[RouteNo - 1])]
 
@@ -180,6 +191,25 @@ class MyGUI:
         safari_path = 'open -a "/Applications/Safari.app" %s'  # This works on MacOS  
         webbrowser.get(safari_path).open('file://' + map_path)
 
+    def save_to_file(self):
+        fileName = "routePlan.txt"
+        if not hasattr(self, 'routePlan'):
+            messagebox.showinfo(title="Save results to file failed", message="There are no results to save!")
+        else:
+            try:
+                save_route_plan_to_file(self.routePlan, fileName)
+            except ValueError:
+                messagebox.showinfo(title="Save results to file failed", message="There are no results to save!")
+
+    def load_from_file(self):
+        fileName = "routePlan.txt"
+        try:
+            description, routes = load_routes_from_file(fileName)
+            self.t_routes = routes
+            self.print_results(description)
+        except ValueError:
+            messagebox.showinfo(title="Load results from file failed", message="There are no results to load!")
+
     def run_router(self):
         if self.data_loaded:
             #os.system("cmake .. && make && python ../test.py")
@@ -201,6 +231,9 @@ class MyGUI:
             # Updating the list with the DC node added at the end of each route  
             self.t_routes = [row + [value_to_add] for row in self.t_routes]  
             self.print_results(results_txt)
+
+            #Save results
+            self.routePlan = RoutePlan(self.results, self.t_routes)
         else:
             messagebox.showinfo(title="Data not available", message="You did not upload any data file")
 
@@ -229,16 +262,50 @@ class RouteSelectApp(ctk.CTk):
             messagebox.showinfo(title="Value error", message="Please enter a valid integer.") 
 
     def run_app(self):  
+        self.protocol("WM_DELETE_WINDOW", self.on_closing)
         self.mainloop()  # Start the application loop
         return self.value  # Return the integer value after the app closes  
+    
+    def on_closing(self):
+        if messagebox.askyesno(title="Die App schliessen?", message="Möchtet Ihr wirklich die App verlassen?"):
+            self.destroy()
 
 def launch_app():  
     app = RouteSelectApp()  
     result = app.run_app()  # This will run the app and wait for user input  
     return result  # Return the result to C++
 
+class RoutePlan:  
+    def __init__(self, description, route):  
+        self.description = description  
+        self.route = route  
+
+def save_route_plan_to_file(routePlan, file_name):  
+    with open(file_name, 'w') as ostream:    
+        description = routePlan.description.replace(' ', '_')  
+        ostream.write(f"{description} {routePlan.route}\n")
+
+def load_routes_from_file(file_name):  
+    if not os.path.exists(file_name):  
+        return []  
+    
+    description = []
+    with open(file_name, 'r') as istream:    
+        for line in istream:  
+            line = line.strip()
+            if " " in line:
+                routes = line.rsplit(' ', 1)
+                results = "\n".join(description)
+                routes = "".join(routes)
+                routes_l = ast.literal_eval(routes)
+                return results, routes_l
+            line = line.replace('_', ' ') 
+            description.append(line) 
+        #routePlan.append(RoutePlan(description, routes))  
+    
+    return results, None
+
+
 m = MyGUI()
 
 m
-
-

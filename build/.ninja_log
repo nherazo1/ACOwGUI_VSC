@@ -1,9 +1,3 @@
 # ninja log v5
-2086	2208	1733178007607279439	module_name.cpython-39-darwin.so	dcb100642391d49c
-11	2086	1733178007476882177	CMakeFiles/module_name.dir/mainACO.cpp.o	a28c1c28a69d763f
-9	2117	1733262685531073424	CMakeFiles/module_name.dir/mainACO.cpp.o	a28c1c28a69d763f
-2117	2260	1733262685686474188	module_name.cpython-39-darwin.so	dcb100642391d49c
-9	2267	1733318530148972108	CMakeFiles/module_name.dir/mainACO.cpp.o	a28c1c28a69d763f
-2267	2416	1733318530310935748	module_name.cpython-39-darwin.so	dcb100642391d49c
-8	2153	1733326206004749555	CMakeFiles/module_name.dir/mainACO.cpp.o	a28c1c28a69d763f
 2154	2302	1733326206166154859	module_name.cpython-39-darwin.so	dcb100642391d49c
+8	2153	1733326206004749555	CMakeFiles/module_name.dir/mainACO.cpp.o	a28c1c28a69d763f
