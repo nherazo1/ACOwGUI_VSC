@@ -4,20 +4,20 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:205 (message)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      The system is: Darwin - 24.1.0 - arm64
+      The system is: Linux - 6.11.0-8-generic - aarch64
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: /usr/bin/clang 
+      Compiler: /usr/bin/aarch64-linux-gnu-gcc 
       Build flags: 
       Id flags:  
       
@@ -27,19 +27,19 @@ events:
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
       
-      The C compiler identification is AppleClang, found in:
-        /Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/3.31.1/CompilerIdC/a.out
+      The C compiler identification is GNU, found in:
+        /home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/3.30.3/CompilerIdC/a.out
       
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: /usr/bin/clang++ 
+      Compiler: /usr/bin/aarch64-linux-gnu-g++ 
       Build flags: 
       Id flags:  
       
@@ -49,377 +49,530 @@ events:
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
-      The CXX compiler identification is AppleClang, found in:
-        /Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/3.31.1/CompilerIdCXX/a.out
+      The CXX compiler identification is GNU, found in:
+        /home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/3.30.3/CompilerIdCXX/a.out
       
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-r2Yndl"
-      binary: "/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-r2Yndl"
+      source: "/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-5RZH37"
+      binary: "/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-5RZH37"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_OSX_ARCHITECTURES: ""
-      CMAKE_OSX_DEPLOYMENT_TARGET: ""
-      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk"
     buildResult:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-r2Yndl'
+        Change Dir: '/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-5RZH37'
         
-        Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_41273
-        [1/2] /usr/bin/clang   -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_41273.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_41273.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_41273.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
-        Apple clang version 16.0.0 (clang-1600.0.26.4)
-        Target: arm64-apple-darwin24.1.0
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6724e/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_6724e.dir/build.make CMakeFiles/cmTC_6724e.dir/build
+        gmake[1]: Entering directory '/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-5RZH37'
+        Building C object CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o
+        /usr/bin/aarch64-linux-gnu-gcc   -v -o CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.30/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/aarch64-linux-gnu-gcc
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: aarch64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 14.2.0-4ubuntu2' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=aarch64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --enable-fix-cortex-a53-843419 --disable-werror --enable-offload-targets=nvptx-none=/build/gcc-14-T7YiXd/gcc-14-14.2.0/debian/tmp-nvptx/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=aarch64-linux-gnu --host=aarch64-linux-gnu --target=aarch64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
         Thread model: posix
-        InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-        clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
-         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.1 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-r2Yndl -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_41273.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_41273.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdebug-compilation-dir=/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-r2Yndl -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_41273.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
-        clang -cc1 version 16.0.0 (clang-1600.0.26.4) default target arm64-apple-darwin24.1.0
-        ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/local/include"
-        ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/Library/Frameworks"
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.2.0 (Ubuntu 14.2.0-4ubuntu2) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_6724e.dir/'
+         /usr/libexec/gcc/aarch64-linux-gnu/14/cc1 -quiet -v -imultiarch aarch64-linux-gnu /usr/share/cmake-3.30/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_6724e.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -o /tmp/ccW0srhf.s
+        GNU C17 (Ubuntu 14.2.0-4ubuntu2) version 14.2.0 (aarch64-linux-gnu)
+        	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/local/include/aarch64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/14/include-fixed/aarch64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/14/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/14/../../../../aarch64-linux-gnu/include"
         #include "..." search starts here:
         #include <...> search starts here:
-         /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include
-         /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include
-         /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
-         /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/System/Library/Frameworks (framework directory)
+         /usr/lib/gcc/aarch64-linux-gnu/14/include
+         /usr/local/include
+         /usr/include/aarch64-linux-gnu
+         /usr/include
         End of search list.
-        [2/2] : && /usr/bin/clang -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -v -Wl,-v CMakeFiles/cmTC_41273.dir/CMakeCCompilerABI.c.o -o cmTC_41273   && :
-        Apple clang version 16.0.0 (clang-1600.0.26.4)
-        Target: arm64-apple-darwin24.1.0
+        Compiler executable checksum: 45ff95ba72421e5019ab377eeb3dfc8b
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_6724e.dir/'
+         as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o /tmp/ccW0srhf.s
+        GNU assembler version 2.43.1 (aarch64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.43.1
+        COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_6724e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6724e.dir/link.txt --verbose=1
+        /usr/bin/aarch64-linux-gnu-gcc  -v -Wl,-v CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o -o cmTC_6724e
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/aarch64-linux-gnu-gcc
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: aarch64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 14.2.0-4ubuntu2' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=aarch64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --enable-fix-cortex-a53-843419 --disable-werror --enable-offload-targets=nvptx-none=/build/gcc-14-T7YiXd/gcc-14-14.2.0/debian/tmp-nvptx/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=aarch64-linux-gnu --host=aarch64-linux-gnu --target=aarch64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
         Thread model: posix
-        InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.1 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_41273 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_41273.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a
-        @(#)PROGRAM:ld PROJECT:ld-1115.7.3
-        BUILD 07:38:57 Oct  4 2024
-        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
-        will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
-        LTO support using: LLVM version 16.0.0 (static support for 29, runtime is 29)
-        TAPI support using: Apple TAPI version 16.0.0 (tapi-1600.0.11.8)
-        Library search paths:
-        	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib
-        	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib/swift
-        Framework search paths:
-        	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/System/Library/Frameworks
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.2.0 (Ubuntu 14.2.0-4ubuntu2) 
+        COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6724e' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_6724e.'
+         /usr/libexec/gcc/aarch64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccws8IwN.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_6724e /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/14 -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o
+        collect2 version 14.2.0
+        /usr/bin/ld -plugin /usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccws8IwN.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_6724e /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/14 -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Ubuntu) 2.43.1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6724e' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_6724e.'
+        gmake[1]: Leaving directory '/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-5RZH37'
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:113 (message)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
-    message: |
-      Effective list of requested architectures (possibly empty)  : ""
-      Effective list of architectures found in the ABI info binary: "arm64"
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed C implicit include dir info: rv=done
         found start of include info
         found start of implicit include info
-          add: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include]
-          add: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include]
-          add: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
+          add: [/usr/lib/gcc/aarch64-linux-gnu/14/include]
+          add: [/usr/local/include]
+          add: [/usr/include/aarch64-linux-gnu]
+          add: [/usr/include]
         end of search list found
-        collapse include dir [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include] ==> [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include]
-        collapse include dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include]
-        collapse include dir [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include] ==> [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
-        implicit include dirs: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include;/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
+        collapse include dir [/usr/lib/gcc/aarch64-linux-gnu/14/include] ==> [/usr/lib/gcc/aarch64-linux-gnu/14/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/aarch64-linux-gnu] ==> [/usr/include/aarch64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/aarch64-linux-gnu/14/include;/usr/local/include;/usr/include/aarch64-linux-gnu;/usr/include]
       
       
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
-        ignore line: [Change Dir: '/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-r2Yndl']
+        ignore line: [Change Dir: '/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-5RZH37']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_41273]
-        ignore line: [[1/2] /usr/bin/clang   -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk   -v -Wl -v -MD -MT CMakeFiles/cmTC_41273.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_41273.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_41273.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
-        ignore line: [Apple clang version 16.0.0 (clang-1600.0.26.4)]
-        ignore line: [Target: arm64-apple-darwin24.1.0]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6724e/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_6724e.dir/build.make CMakeFiles/cmTC_6724e.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-5RZH37']
+        ignore line: [Building C object CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/aarch64-linux-gnu-gcc   -v -o CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.30/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/aarch64-linux-gnu-gcc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: aarch64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 14.2.0-4ubuntu2' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=aarch64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --enable-fix-cortex-a53-843419 --disable-werror --enable-offload-targets=nvptx-none=/build/gcc-14-T7YiXd/gcc-14-14.2.0/debian/tmp-nvptx/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=aarch64-linux-gnu --host=aarch64-linux-gnu --target=aarch64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
         ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
-        ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
-        ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.1 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-r2Yndl -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_41273.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_41273.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdebug-compilation-dir=/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-r2Yndl -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_41273.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
-        ignore line: [clang -cc1 version 16.0.0 (clang-1600.0.26.4) default target arm64-apple-darwin24.1.0]
-        ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/local/include"]
-        ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/Library/Frameworks"]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.2.0 (Ubuntu 14.2.0-4ubuntu2) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_6724e.dir/']
+        ignore line: [ /usr/libexec/gcc/aarch64-linux-gnu/14/cc1 -quiet -v -imultiarch aarch64-linux-gnu /usr/share/cmake-3.30/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_6724e.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -o /tmp/ccW0srhf.s]
+        ignore line: [GNU C17 (Ubuntu 14.2.0-4ubuntu2) version 14.2.0 (aarch64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 14.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/aarch64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/14/include-fixed/aarch64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/14/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/14/../../../../aarch64-linux-gnu/include"]
         ignore line: [#include "..." search starts here:]
         ignore line: [#include <...> search starts here:]
-        ignore line: [ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include]
-        ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include]
-        ignore line: [ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
-        ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/System/Library/Frameworks (framework directory)]
+        ignore line: [ /usr/lib/gcc/aarch64-linux-gnu/14/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/aarch64-linux-gnu]
+        ignore line: [ /usr/include]
         ignore line: [End of search list.]
-        ignore line: [[2/2] : && /usr/bin/clang -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names -v -Wl -v CMakeFiles/cmTC_41273.dir/CMakeCCompilerABI.c.o -o cmTC_41273   && :]
-        ignore line: [Apple clang version 16.0.0 (clang-1600.0.26.4)]
-        ignore line: [Target: arm64-apple-darwin24.1.0]
+        ignore line: [Compiler executable checksum: 45ff95ba72421e5019ab377eeb3dfc8b]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_6724e.dir/']
+        ignore line: [ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o /tmp/ccW0srhf.s]
+        ignore line: [GNU assembler version 2.43.1 (aarch64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.43.1]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_6724e]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6724e.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/aarch64-linux-gnu-gcc  -v -Wl -v CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o -o cmTC_6724e]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/aarch64-linux-gnu-gcc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: aarch64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 14.2.0-4ubuntu2' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=aarch64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --enable-fix-cortex-a53-843419 --disable-werror --enable-offload-targets=nvptx-none=/build/gcc-14-T7YiXd/gcc-14-14.2.0/debian/tmp-nvptx/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=aarch64-linux-gnu --host=aarch64-linux-gnu --target=aarch64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
         ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
-        link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.1 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_41273 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_41273.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
-          arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
-          arg [-demangle] ==> ignore
-          arg [-lto_library] ==> ignore, skip following value
-          arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib] ==> skip value of -lto_library
-          arg [-dynamic] ==> ignore
-          arg [-arch] ==> ignore
-          arg [arm64] ==> ignore
-          arg [-platform_version] ==> ignore
-          arg [macos] ==> ignore
-          arg [15.0.0] ==> ignore
-          arg [15.1] ==> ignore
-          arg [-syslibroot] ==> ignore
-          arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk] ==> ignore
-          arg [-mllvm] ==> ignore
-          arg [-enable-linkonceodr-outlining] ==> ignore
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.2.0 (Ubuntu 14.2.0-4ubuntu2) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6724e' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_6724e.']
+        link line: [ /usr/libexec/gcc/aarch64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccws8IwN.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_6724e /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/14 -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/aarch64-linux-gnu/14/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccws8IwN.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib/ld-linux-aarch64.so.1] ==> ignore
+          arg [-X] ==> ignore
+          arg [-EL] ==> ignore
+          arg [-maarch64linux] ==> ignore
+          arg [--fix-cortex-a53-843419] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_41273] ==> ignore
-          arg [-search_paths_first] ==> ignore
-          arg [-headerpad_max_install_names] ==> ignore
+          arg [cmTC_6724e] ==> ignore
+          arg [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o]
+          arg [-L/usr/lib/gcc/aarch64-linux-gnu/14] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/14]
+          arg [-L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu]
+          arg [-L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib]
+          arg [-L/lib/aarch64-linux-gnu] ==> dir [/lib/aarch64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/aarch64-linux-gnu] ==> dir [/usr/lib/aarch64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/aarch64-linux-gnu/14/../../..] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/14/../../..]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_41273.dir/CMakeCCompilerABI.c.o] ==> ignore
-          arg [-lSystem] ==> lib [System]
-          arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
-        linker tool for 'C': /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
-        Library search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib/swift]
-        Framework search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/System/Library/Frameworks]
-        remove lib [System]
-        remove lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
-        collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib]
-        collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib/swift] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib/swift]
-        collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/System/Library/Frameworks] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/System/Library/Frameworks]
-        implicit libs: []
-        implicit objs: []
-        implicit dirs: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib/swift]
-        implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/System/Library/Frameworks]
+          arg [CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o]
+          arg [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 14.2.0]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccws8IwN.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_6724e /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/14 -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_6724e.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o] ==> [/usr/lib/aarch64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o] ==> [/usr/lib/aarch64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o] ==> [/usr/lib/aarch64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/14] ==> [/usr/lib/gcc/aarch64-linux-gnu/14]
+        collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu] ==> [/usr/lib/aarch64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/aarch64-linux-gnu] ==> [/lib/aarch64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/aarch64-linux-gnu] ==> [/usr/lib/aarch64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/14/../../..] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/aarch64-linux-gnu/Scrt1.o;/usr/lib/aarch64-linux-gnu/crti.o;/usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o;/usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o;/usr/lib/aarch64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/aarch64-linux-gnu/14;/usr/lib/aarch64-linux-gnu;/usr/lib;/lib/aarch64-linux-gnu;/lib]
+        implicit fwks: []
       
       
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/usr/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      Running the C compiler's linker: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" "-v"
-      @(#)PROGRAM:ld PROJECT:ld-1115.7.3
-      BUILD 07:38:57 Oct  4 2024
-      configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
-      will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
-      LTO support using: LLVM version 16.0.0 (static support for 29, runtime is 29)
-      TAPI support using: Apple TAPI version 16.0.0 (tapi-1600.0.11.8)
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Ubuntu) 2.43.1
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-Elm7oY"
-      binary: "/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-Elm7oY"
+      source: "/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-VDbgSW"
+      binary: "/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-VDbgSW"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_OSX_ARCHITECTURES: ""
-      CMAKE_OSX_DEPLOYMENT_TARGET: ""
-      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk"
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-Elm7oY'
+        Change Dir: '/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-VDbgSW'
         
-        Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_26505
-        [1/2] /usr/bin/clang++   -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_26505.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_26505.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_26505.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
-        Apple clang version 16.0.0 (clang-1600.0.26.4)
-        Target: arm64-apple-darwin24.1.0
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1232d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_1232d.dir/build.make CMakeFiles/cmTC_1232d.dir/build
+        gmake[1]: Entering directory '/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-VDbgSW'
+        Building CXX object CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/aarch64-linux-gnu-g++   -v -o CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/aarch64-linux-gnu-g++
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: aarch64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 14.2.0-4ubuntu2' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=aarch64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --enable-fix-cortex-a53-843419 --disable-werror --enable-offload-targets=nvptx-none=/build/gcc-14-T7YiXd/gcc-14-14.2.0/debian/tmp-nvptx/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=aarch64-linux-gnu --host=aarch64-linux-gnu --target=aarch64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
         Thread model: posix
-        InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-        clang++: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
-        ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"
-         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.1 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-Elm7oY -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_26505.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_26505.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-Elm7oY -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_26505.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
-        clang -cc1 version 16.0.0 (clang-1600.0.26.4) default target arm64-apple-darwin24.1.0
-        ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/local/include"
-        ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/Library/Frameworks"
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.2.0 (Ubuntu 14.2.0-4ubuntu2) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_1232d.dir/'
+         /usr/libexec/gcc/aarch64-linux-gnu/14/cc1plus -quiet -v -imultiarch aarch64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_1232d.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -o /tmp/ccl5uaVo.s
+        GNU C++17 (Ubuntu 14.2.0-4ubuntu2) version 14.2.0 (aarch64-linux-gnu)
+        	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/usr/include/aarch64-linux-gnu/c++/14"
+        ignoring nonexistent directory "/usr/local/include/aarch64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/14/include-fixed/aarch64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/14/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/14/../../../../aarch64-linux-gnu/include"
         #include "..." search starts here:
         #include <...> search starts here:
-         /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include/c++/v1
-         /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include
-         /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include
-         /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
-         /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/System/Library/Frameworks (framework directory)
+         /usr/include/c++/14
+         /usr/include/aarch64-linux-gnu/c++/14
+         /usr/include/c++/14/backward
+         /usr/lib/gcc/aarch64-linux-gnu/14/include
+         /usr/local/include
+         /usr/include/aarch64-linux-gnu
+         /usr/include
         End of search list.
-        [2/2] : && /usr/bin/clang++ -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -v -Wl,-v CMakeFiles/cmTC_26505.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_26505   && :
-        Apple clang version 16.0.0 (clang-1600.0.26.4)
-        Target: arm64-apple-darwin24.1.0
+        Compiler executable checksum: 3bbfe309984f90699ccf8d6bb7e15dd2
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_1232d.dir/'
+         as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccl5uaVo.s
+        GNU assembler version 2.43.1 (aarch64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.43.1
+        COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_1232d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1232d.dir/link.txt --verbose=1
+        /usr/bin/aarch64-linux-gnu-g++  -v -Wl,-v CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_1232d
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/aarch64-linux-gnu-g++
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: aarch64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 14.2.0-4ubuntu2' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=aarch64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --enable-fix-cortex-a53-843419 --disable-werror --enable-offload-targets=nvptx-none=/build/gcc-14-T7YiXd/gcc-14-14.2.0/debian/tmp-nvptx/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=aarch64-linux-gnu --host=aarch64-linux-gnu --target=aarch64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
         Thread model: posix
-        InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.1 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_26505 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_26505.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a
-        @(#)PROGRAM:ld PROJECT:ld-1115.7.3
-        BUILD 07:38:57 Oct  4 2024
-        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
-        will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
-        LTO support using: LLVM version 16.0.0 (static support for 29, runtime is 29)
-        TAPI support using: Apple TAPI version 16.0.0 (tapi-1600.0.11.8)
-        Library search paths:
-        	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib
-        	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib/swift
-        Framework search paths:
-        	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/System/Library/Frameworks
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.2.0 (Ubuntu 14.2.0-4ubuntu2) 
+        COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_1232d' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_1232d.'
+         /usr/libexec/gcc/aarch64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWZoBcm.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_1232d /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/14 -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o
+        collect2 version 14.2.0
+        /usr/bin/ld -plugin /usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWZoBcm.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_1232d /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/14 -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Ubuntu) 2.43.1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_1232d' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_1232d.'
+        gmake[1]: Leaving directory '/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-VDbgSW'
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:113 (message)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
-    message: |
-      Effective list of requested architectures (possibly empty)  : ""
-      Effective list of architectures found in the ABI info binary: "arm64"
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed CXX implicit include dir info: rv=done
         found start of include info
         found start of implicit include info
-          add: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include/c++/v1]
-          add: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include]
-          add: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include]
-          add: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
+          add: [/usr/include/c++/14]
+          add: [/usr/include/aarch64-linux-gnu/c++/14]
+          add: [/usr/include/c++/14/backward]
+          add: [/usr/lib/gcc/aarch64-linux-gnu/14/include]
+          add: [/usr/local/include]
+          add: [/usr/include/aarch64-linux-gnu]
+          add: [/usr/include]
         end of search list found
-        collapse include dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include/c++/v1] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include/c++/v1]
-        collapse include dir [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include] ==> [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include]
-        collapse include dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include]
-        collapse include dir [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include] ==> [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
-        implicit include dirs: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include/c++/v1;/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include;/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
+        collapse include dir [/usr/include/c++/14] ==> [/usr/include/c++/14]
+        collapse include dir [/usr/include/aarch64-linux-gnu/c++/14] ==> [/usr/include/aarch64-linux-gnu/c++/14]
+        collapse include dir [/usr/include/c++/14/backward] ==> [/usr/include/c++/14/backward]
+        collapse include dir [/usr/lib/gcc/aarch64-linux-gnu/14/include] ==> [/usr/lib/gcc/aarch64-linux-gnu/14/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/aarch64-linux-gnu] ==> [/usr/include/aarch64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/14;/usr/include/aarch64-linux-gnu/c++/14;/usr/include/c++/14/backward;/usr/lib/gcc/aarch64-linux-gnu/14/include;/usr/local/include;/usr/include/aarch64-linux-gnu;/usr/include]
       
       
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
-        ignore line: [Change Dir: '/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-Elm7oY']
+        ignore line: [Change Dir: '/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-VDbgSW']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_26505]
-        ignore line: [[1/2] /usr/bin/clang++   -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk   -v -Wl -v -MD -MT CMakeFiles/cmTC_26505.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_26505.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_26505.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
-        ignore line: [Apple clang version 16.0.0 (clang-1600.0.26.4)]
-        ignore line: [Target: arm64-apple-darwin24.1.0]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1232d/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_1232d.dir/build.make CMakeFiles/cmTC_1232d.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-VDbgSW']
+        ignore line: [Building CXX object CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/aarch64-linux-gnu-g++   -v -o CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/aarch64-linux-gnu-g++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: aarch64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 14.2.0-4ubuntu2' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=aarch64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --enable-fix-cortex-a53-843419 --disable-werror --enable-offload-targets=nvptx-none=/build/gcc-14-T7YiXd/gcc-14-14.2.0/debian/tmp-nvptx/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=aarch64-linux-gnu --host=aarch64-linux-gnu --target=aarch64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
         ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
-        ignore line: [clang++: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
-        ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"]
-        ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.1 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-Elm7oY -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_26505.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_26505.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-Elm7oY -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_26505.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
-        ignore line: [clang -cc1 version 16.0.0 (clang-1600.0.26.4) default target arm64-apple-darwin24.1.0]
-        ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/local/include"]
-        ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/Library/Frameworks"]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.2.0 (Ubuntu 14.2.0-4ubuntu2) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_1232d.dir/']
+        ignore line: [ /usr/libexec/gcc/aarch64-linux-gnu/14/cc1plus -quiet -v -imultiarch aarch64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_1232d.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -o /tmp/ccl5uaVo.s]
+        ignore line: [GNU C++17 (Ubuntu 14.2.0-4ubuntu2) version 14.2.0 (aarch64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 14.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/usr/include/aarch64-linux-gnu/c++/14"]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/aarch64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/14/include-fixed/aarch64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/14/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/14/../../../../aarch64-linux-gnu/include"]
         ignore line: [#include "..." search starts here:]
         ignore line: [#include <...> search starts here:]
-        ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include/c++/v1]
-        ignore line: [ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include]
-        ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include]
-        ignore line: [ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
-        ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/System/Library/Frameworks (framework directory)]
+        ignore line: [ /usr/include/c++/14]
+        ignore line: [ /usr/include/aarch64-linux-gnu/c++/14]
+        ignore line: [ /usr/include/c++/14/backward]
+        ignore line: [ /usr/lib/gcc/aarch64-linux-gnu/14/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/aarch64-linux-gnu]
+        ignore line: [ /usr/include]
         ignore line: [End of search list.]
-        ignore line: [[2/2] : && /usr/bin/clang++ -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names -v -Wl -v CMakeFiles/cmTC_26505.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_26505   && :]
-        ignore line: [Apple clang version 16.0.0 (clang-1600.0.26.4)]
-        ignore line: [Target: arm64-apple-darwin24.1.0]
+        ignore line: [Compiler executable checksum: 3bbfe309984f90699ccf8d6bb7e15dd2]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_1232d.dir/']
+        ignore line: [ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccl5uaVo.s]
+        ignore line: [GNU assembler version 2.43.1 (aarch64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.43.1]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_1232d]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1232d.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/aarch64-linux-gnu-g++  -v -Wl -v CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_1232d]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/aarch64-linux-gnu-g++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: aarch64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 14.2.0-4ubuntu2' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=aarch64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --enable-fix-cortex-a53-843419 --disable-werror --enable-offload-targets=nvptx-none=/build/gcc-14-T7YiXd/gcc-14-14.2.0/debian/tmp-nvptx/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=aarch64-linux-gnu --host=aarch64-linux-gnu --target=aarch64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
         ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
-        link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.1 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_26505 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_26505.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
-          arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
-          arg [-demangle] ==> ignore
-          arg [-lto_library] ==> ignore, skip following value
-          arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib] ==> skip value of -lto_library
-          arg [-dynamic] ==> ignore
-          arg [-arch] ==> ignore
-          arg [arm64] ==> ignore
-          arg [-platform_version] ==> ignore
-          arg [macos] ==> ignore
-          arg [15.0.0] ==> ignore
-          arg [15.1] ==> ignore
-          arg [-syslibroot] ==> ignore
-          arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk] ==> ignore
-          arg [-mllvm] ==> ignore
-          arg [-enable-linkonceodr-outlining] ==> ignore
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.2.0 (Ubuntu 14.2.0-4ubuntu2) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/14/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/14/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_1232d' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_1232d.']
+        link line: [ /usr/libexec/gcc/aarch64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWZoBcm.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_1232d /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/14 -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/aarch64-linux-gnu/14/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccWZoBcm.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib/ld-linux-aarch64.so.1] ==> ignore
+          arg [-X] ==> ignore
+          arg [-EL] ==> ignore
+          arg [-maarch64linux] ==> ignore
+          arg [--fix-cortex-a53-843419] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_26505] ==> ignore
-          arg [-search_paths_first] ==> ignore
-          arg [-headerpad_max_install_names] ==> ignore
+          arg [cmTC_1232d] ==> ignore
+          arg [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o]
+          arg [-L/usr/lib/gcc/aarch64-linux-gnu/14] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/14]
+          arg [-L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu]
+          arg [-L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib]
+          arg [-L/lib/aarch64-linux-gnu] ==> dir [/lib/aarch64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/aarch64-linux-gnu] ==> dir [/usr/lib/aarch64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/aarch64-linux-gnu/14/../../..] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/14/../../..]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_26505.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
-          arg [-lc++] ==> lib [c++]
-          arg [-lSystem] ==> lib [System]
-          arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
-        linker tool for 'CXX': /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
-        Library search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib/swift]
-        Framework search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/System/Library/Frameworks]
-        remove lib [System]
-        remove lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
-        collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib]
-        collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib/swift] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib/swift]
-        collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/System/Library/Frameworks] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/System/Library/Frameworks]
-        implicit libs: [c++]
-        implicit objs: []
-        implicit dirs: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/lib/swift]
-        implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/System/Library/Frameworks]
+          arg [CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o]
+          arg [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 14.2.0]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/aarch64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWZoBcm.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_1232d /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/14 -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_1232d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o] ==> [/usr/lib/aarch64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o] ==> [/usr/lib/aarch64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crtn.o] ==> [/usr/lib/aarch64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/14] ==> [/usr/lib/gcc/aarch64-linux-gnu/14]
+        collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu] ==> [/usr/lib/aarch64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/14/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/aarch64-linux-gnu] ==> [/lib/aarch64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/aarch64-linux-gnu] ==> [/usr/lib/aarch64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/14/../../..] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib/aarch64-linux-gnu/Scrt1.o;/usr/lib/aarch64-linux-gnu/crti.o;/usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o;/usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o;/usr/lib/aarch64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/aarch64-linux-gnu/14;/usr/lib/aarch64-linux-gnu;/usr/lib;/lib/aarch64-linux-gnu;/lib]
+        implicit fwks: []
       
       
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/usr/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      Running the CXX compiler's linker: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" "-v"
-      @(#)PROGRAM:ld PROJECT:ld-1115.7.3
-      BUILD 07:38:57 Oct  4 2024
-      configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
-      will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
-      LTO support using: LLVM version 16.0.0 (static support for 29, runtime is 29)
-      TAPI support using: Apple TAPI version 16.0.0 (tapi-1600.0.11.8)
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Ubuntu) 2.43.1
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
-      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
-      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "/usr/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.30/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
       - "pybind11/tools/pybind11Common.cmake:268 (check_cxx_compiler_flag)"
       - "pybind11/tools/pybind11Common.cmake:310 (_pybind11_return_if_cxx_and_linker_flags_work)"
       - "pybind11/tools/pybind11Common.cmake:376 (_pybind11_generate_lto)"
@@ -427,59 +580,28 @@ events:
     checks:
       - "Performing Test HAS_FLTO"
     directories:
-      source: "/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-arPgoi"
-      binary: "/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-arPgoi"
+      source: "/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-6Umsj1"
+      binary: "/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-6Umsj1"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
       CMAKE_MODULE_PATH: ""
-      CMAKE_OSX_ARCHITECTURES: ""
-      CMAKE_OSX_DEPLOYMENT_TARGET: ""
-      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk"
     buildResult:
       variable: "HAS_FLTO"
       cached: true
       stdout: |
-        Change Dir: '/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-arPgoi'
+        Change Dir: '/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-6Umsj1'
         
-        Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_74529
-        [1/2] /usr/bin/clang++ -DHAS_FLTO  -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk   -flto -MD -MT CMakeFiles/cmTC_74529.dir/src.cxx.o -MF CMakeFiles/cmTC_74529.dir/src.cxx.o.d -o CMakeFiles/cmTC_74529.dir/src.cxx.o -c /Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-arPgoi/src.cxx
-        [2/2] : && /usr/bin/clang++ -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/cmTC_74529.dir/src.cxx.o -o cmTC_74529  -flto && :
-        
-      exitCode: 0
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
-      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
-      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
-      - "pybind11/tools/pybind11Common.cmake:268 (check_cxx_compiler_flag)"
-      - "pybind11/tools/pybind11Common.cmake:304 (_pybind11_return_if_cxx_and_linker_flags_work)"
-      - "pybind11/tools/pybind11Common.cmake:379 (_pybind11_generate_lto)"
-      - "pybind11/CMakeLists.txt:208 (include)"
-    checks:
-      - "Performing Test HAS_FLTO_THIN"
-    directories:
-      source: "/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-P8sfw3"
-      binary: "/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-P8sfw3"
-    cmakeVariables:
-      CMAKE_CXX_FLAGS: ""
-      CMAKE_CXX_FLAGS_DEBUG: "-g"
-      CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: ""
-      CMAKE_OSX_ARCHITECTURES: ""
-      CMAKE_OSX_DEPLOYMENT_TARGET: ""
-      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk"
-    buildResult:
-      variable: "HAS_FLTO_THIN"
-      cached: true
-      stdout: |
-        Change Dir: '/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-P8sfw3'
-        
-        Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_2e067
-        [1/2] /usr/bin/clang++ -DHAS_FLTO_THIN  -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk   -flto=thin -MD -MT CMakeFiles/cmTC_2e067.dir/src.cxx.o -MF CMakeFiles/cmTC_2e067.dir/src.cxx.o.d -o CMakeFiles/cmTC_2e067.dir/src.cxx.o -c /Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-P8sfw3/src.cxx
-        [2/2] : && /usr/bin/clang++ -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/cmTC_2e067.dir/src.cxx.o -o cmTC_2e067  -flto=thin && :
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4447a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_4447a.dir/build.make CMakeFiles/cmTC_4447a.dir/build
+        gmake[1]: Entering directory '/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-6Umsj1'
+        Building CXX object CMakeFiles/cmTC_4447a.dir/src.cxx.o
+        /usr/bin/aarch64-linux-gnu-g++ -DHAS_FLTO  -flto -fno-fat-lto-objects -o CMakeFiles/cmTC_4447a.dir/src.cxx.o -c /home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-6Umsj1/src.cxx
+        Linking CXX executable cmTC_4447a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4447a.dir/link.txt --verbose=1
+        /usr/bin/aarch64-linux-gnu-g++ CMakeFiles/cmTC_4447a.dir/src.cxx.o -o cmTC_4447a  -flto
+        gmake[1]: Leaving directory '/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build/CMakeFiles/CMakeScratch/TryCompile-6Umsj1'
         
       exitCode: 0
 ...

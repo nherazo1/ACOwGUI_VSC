@@ -4,17 +4,17 @@
 
 
 # Configuration directories and files
-SourceDirectory: /Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC
-BuildDirectory: /Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build
+SourceDirectory: /home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC
+BuildDirectory: /home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/build
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: Nilsons-Laptop.local
+Site: nilson-VMware20-1
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Darwin-g++
+BuildName: Linux-aarch64-linux-gnu-g++
 
 # Subprojects
 LabelsForSubprojects: 
@@ -27,8 +27,8 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/opt/homebrew/bin/cmake" "/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC"
-MakeCommand: /opt/homebrew/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
+ConfigureCommand: "/usr/bin/cmake" "/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC"
+MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
 # version control
@@ -45,7 +45,7 @@ SVNOptions:
 SVNUpdateOptions: 
 
 # Git options
-GITCommand: /opt/homebrew/bin/git
+GITCommand: /usr/bin/git
 GITInitSubmodules: 
 GITUpdateOptions: 
 GITUpdateCustom: 
@@ -58,13 +58,13 @@ P4UpdateOptions:
 P4UpdateCustom: 
 
 # Generic update command
-UpdateCommand: /opt/homebrew/bin/git
+UpdateCommand: /usr/bin/git
 UpdateOptions: 
 UpdateType: git
 
 # Compiler info
-Compiler: /usr/bin/g++
-CompilerVersion: 16.0.0.16000026
+Compiler: /usr/bin/aarch64-linux-gnu-g++
+CompilerVersion: 14.2.0
 
 # Dynamic analysis (MemCheck)
 PurifyCommand: 

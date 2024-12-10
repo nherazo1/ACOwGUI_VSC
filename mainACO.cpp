@@ -4,8 +4,8 @@
 #include <random>
 #include <chrono>
 #include <cmath>
-#include "pybind11/include/pybind11/pybind11.h"
-#include "pybind11/include/pybind11/embed.h"
+#include "pybind11/pybind11.h"
+#include "pybind11/embed.h"
 #include <stdio.h>
 #include <pybind11/stl.h>
 #include <vector>

@@ -1,0 +1,1 @@
+/usr/bin/aarch64-linux-gnu-g++ -fPIC -g -shared  -o module_name.cpython-312-aarch64-linux-gnu.so CMakeFiles/module_name.dir/mainACO.cpp.o

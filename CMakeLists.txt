@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION 3.5.0)
 project(ACOWGUI_VSC VERSION 0.1.0 LANGUAGES C CXX)
 
-set(CMAKE_CXX_COMPILER "/usr/bin/g++" CACHE STRING "C compiler" FORCE)
-set(CMAKE_C_COMPILER "/usr/bin/gcc" CACHE STRING "C++ compiler" FORCE)
+#set(CMAKE_CXX_COMPILER "/usr/bin/g++" CACHE STRING "C compiler" FORCE)
+#set(CMAKE_C_COMPILER "/usr/bin/gcc" CACHE STRING "C++ compiler" FORCE)
 set(CMAKE_CXX_STANDARD 17)
+set (PYBIND11_PYTHON_VERSION "3.9")
 
 add_subdirectory(pybind11)
 #add_subdirectory(pybind11/include/pybind11)

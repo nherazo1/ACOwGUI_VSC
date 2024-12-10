@@ -2,6 +2,7 @@
 #include <cmath>
 #include <fstream>
 #include <stdio.h>
+#include <vector>
 
 #define PRINTER(name) printer(#name, (name))
 //using namespace std;

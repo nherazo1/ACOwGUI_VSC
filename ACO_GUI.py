@@ -106,7 +106,7 @@ class MyGUI:
 
     def load_data(self):
         src_file = askopenfilename(title='Select your file')
-        dst_file = r"/Users/nherazo/Developer/PythonProjects/PyACOwGUI_VSC/data.csv"
+        dst_file = r"/home/nilson/Dokumente/Developer/PythonProjects/ACOwGUI_VSC/data.csv"
         if src_file == '':
             messagebox.showinfo(title="Data loading failed", message="You did not select the file")
         else:
@@ -188,8 +188,8 @@ class MyGUI:
         map_path = os.path.abspath('routesMap.html')  
 
         # Specify the Safari browser  
-        safari_path = 'open -a "/Applications/Safari.app" %s'  # This works on MacOS  
-        webbrowser.get(safari_path).open('file://' + map_path)
+        browser_path = 'xdg-open'  # This works on Linux  
+        webbrowser.get(browser_path).open('file://' + map_path)
 
     def save_to_file(self):
         fileName = "routePlan.txt"
@@ -198,6 +198,7 @@ class MyGUI:
         else:
             try:
                 save_route_plan_to_file(self.routePlan, fileName)
+                messagebox.showinfo(title="Results successfully saved", message="Your results were stored in the system")
             except ValueError:
                 messagebox.showinfo(title="Save results to file failed", message="There are no results to save!")
 
