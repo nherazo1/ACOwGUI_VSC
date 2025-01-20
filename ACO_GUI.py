@@ -188,8 +188,8 @@ class MyGUI:
         map_path = os.path.abspath('routesMap.html')  
 
         # Specify the Safari browser  
-        safari_path = 'open -a "/Applications/Safari.app" %s'  # This works on MacOS  
-        webbrowser.get(safari_path).open('file://' + map_path)
+        # safari_path = 'open -a "/Applications/Safari.app" %s'  # This works on MacOS  
+        webbrowser.open('file://' + map_path) # .get(safari_path)
 
     def save_to_file(self):
         fileName = "routePlan.txt"
@@ -198,6 +198,7 @@ class MyGUI:
         else:
             try:
                 save_route_plan_to_file(self.routePlan, fileName)
+                messagebox.showinfo(title="Save Results", message="Your route plan was successfully saved!")
             except ValueError:
                 messagebox.showinfo(title="Save results to file failed", message="There are no results to save!")
 
@@ -219,6 +220,9 @@ class MyGUI:
             results_txt = "Your results are being processed, please wait, the algorithm will take a maximum time of 20 minutes. Your results will appear below..."
             self.print_results(results_txt)
             self.results = ACOfunct()
+            if(self.results == ""):
+                self.print_results("")
+                messagebox.showinfo(title="Route optimization failed", message="Process stopped by the user!")
             results_txt = self.results
             self.routes = GetRoutes()
 

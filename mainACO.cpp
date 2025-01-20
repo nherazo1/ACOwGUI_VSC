@@ -41,12 +41,14 @@ long ConsoleInput(){
     return number; 
 }
 
+
 std::string ACOfunct() {
     /*
     This is the acoModule ACO algorithm
     */
 
-    /* pybind11::scoped_interpreter guard{};  */
+    /* pybind11::scoped_interpreter guard{}; */
+    *resultsPanel = "";
 
     auto data_entry_module = pybind11::module::import("data_entry_");
     /* auto ACO_GUI_module = pybind11::module::import("ACO_GUI");
@@ -65,9 +67,13 @@ std::string ACOfunct() {
     long double ObjDistGlobal = 20000000000;
     const long Arg = 10;
     long NumVeh;
-    //std::cout << "Please enter the number of vehicles as an integer below: \n";
-    //NumVeh = ConsoleInput();
-    NumVeh = getVehFleet;
+
+    NumVeh = getVehFleet; 
+    if (NumVeh == -1)
+    {
+        return "proccess stopped by the user";
+    }
+    
 
     //Pheromone parameters
     const double T0 = 0.85, B = 2.3, q0 = 0.85, a = 0.1;
@@ -155,8 +161,13 @@ std::string ACOfunct() {
         long getVehCap = cap_data_entry_module.attr("launch_app2")(x + 1).cast<long>();
         long VehCapacity = getVehCap;
         Cap[x] = VehCapacity;
+        if (Cap[x] == -1)
+        {
+            return "proccess stopped by the user";
+        }
         CapList += "V" + std::to_string(x + 1) + " - " + std::to_string(Cap[x]) + ", ";
     }
+    
 
     CapCopy = Cap;
 
@@ -176,7 +187,13 @@ std::string ACOfunct() {
         Cap = CapCopy;
         
         // Rank vehicle capacities
-        std::sort(Cap.begin(), Cap.end(), std::greater<long>()); //std::greater()
+        if (Iter%2 == 0)
+        {
+            std::sort(Cap.begin(), Cap.end(), std::greater<long>()); //std::greater()
+        }else
+        {
+            std::sort(Cap.begin(), Cap.end()); //std::greater()
+        }
         // End vehicles ordering
 
         // Assign customers to vehicle routes until all costumers assigned

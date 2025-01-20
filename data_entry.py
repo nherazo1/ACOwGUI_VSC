@@ -13,10 +13,14 @@ class App(customtkinter.CTk):
         self.frame.pack(padx=20, pady=20)  
         self.entry = customtkinter.CTkEntry(self.frame, placeholder_text="Enter an integer", text_color='grey', width=300, height=40)  
         self.entry.pack(pady=10)  
+        self.entry.focus_set()
         self.submit_button = customtkinter.CTkButton(self.frame, text="Submit Veh CAP", command=self.get_integer)  
         self.submit_button.pack(pady=10)  
+        self.bind('<Return>', self.get_integer)
+        self.bind('<KP_Enter>', self.get_integer)
+        self.protocol("WM_DELETE_WINDOW", self.onClose)
 
-    def get_integer(self):  
+    def get_integer(self, event=None):  
         try:  
             self.value = int(self.entry.get())
             self.after(100, self.destroy())  # Schedule closing the application with a slight delay after submission
@@ -27,6 +31,11 @@ class App(customtkinter.CTk):
     def run_app(self):  
         self.mainloop()  # Start the application loop
         return self.value  # Return the integer value after the app closes  
+    
+    def onClose(self, event=None):
+        self.value = -1
+        self.after(100, self.destroy())  # Schedule closing the application with a slight delay after submission
+        self.quit()  
 
 def launch_app2(item):  
     app = App()  

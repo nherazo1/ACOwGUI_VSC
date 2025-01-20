@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Site BuildName="Darwin-g++"
-	BuildStamp="20241206-2111-Experimental"
+	BuildStamp="20250115-1958-Experimental"
 	Name="Nilsons-Laptop.local"
 	Generator="ctest-3.31.1"
 	CompilerName="/usr/bin/g++"
 	CompilerVersion="16.0.0.16000026"
 	OSName="macOS"
 	Hostname="Nilsons-Laptop.local"
-	OSRelease="15.1.1"
-	OSVersion="24B91"
+	OSRelease="15.2"
+	OSVersion="24C101"
 	OSPlatform="arm64"
 	Is64Bits="1"
 	VendorString="Apple"
@@ -19,17 +19,17 @@
 	ProcessorCacheSize="131072"
 	NumberOfLogicalCPU="10"
 	NumberOfPhysicalCPU="10"
-	TotalVirtualMemory="5120"
+	TotalVirtualMemory="8192"
 	TotalPhysicalMemory="16384"
 	LogicalProcessorsPerPhysical="10"
 	ProcessorClockFrequency="0"
 	>
 	<Testing>
-		<StartDateTime>Dec 06 18:03 -05</StartDateTime>
-		<StartTestTime>1733526187</StartTestTime>
+		<StartDateTime>Jan 15 17:52 -05</StartDateTime>
+		<StartTestTime>1736981552</StartTestTime>
 		<TestList/>
-		<EndDateTime>Dec 06 18:03 -05</EndDateTime>
-		<EndTestTime>1733526187</EndTestTime>
+		<EndDateTime>Jan 15 17:52 -05</EndDateTime>
+		<EndTestTime>1736981552</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

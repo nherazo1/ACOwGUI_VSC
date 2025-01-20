@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_module_name: phony || .
 build CMakeFiles/module_name.dir/mainACO.cpp.o: CXX_COMPILER__module_name_unscanned_Debug /Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/mainACO.cpp || cmake_object_order_depends_target_module_name
   DEFINES = -Dmodule_name_EXPORTS
   DEP_FILE = CMakeFiles/module_name.dir/mainACO.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fPIC -fvisibility=hidden
+  FLAGS = -g -std=gnu++17 -arch arm64 -fPIC -fvisibility=hidden
   INCLUDES = -isystem /Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/pybind11/include -isystem /Users/nherazo/opt/anaconda3/include/python3.9
   OBJECT_DIR = CMakeFiles/module_name.dir
   OBJECT_FILE_DIR = CMakeFiles/module_name.dir
@@ -66,7 +66,7 @@ build CMakeFiles/module_name.dir/mainACO.cpp.o: CXX_COMPILER__module_name_unscan
 # Link the shared module module_name.cpython-39-darwin.so
 
 build module_name.cpython-39-darwin.so: CXX_MODULE_LIBRARY_LINKER__module_name_Debug CMakeFiles/module_name.dir/mainACO.cpp.o
-  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk
+  ARCH_FLAGS = -arch arm64
   LANGUAGE_COMPILE_FLAGS = -g
   LINK_FLAGS = -Xlinker -undefined -Xlinker dynamic_lookup
   OBJECT_DIR = CMakeFiles/module_name.dir

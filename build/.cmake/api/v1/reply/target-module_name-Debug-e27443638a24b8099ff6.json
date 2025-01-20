@@ -50,7 +50,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fPIC -fvisibility=hidden"
+					"fragment" : "-g -std=gnu++17 -arch arm64 -fPIC -fvisibility=hidden"
 				}
 			],
 			"defines" : 
