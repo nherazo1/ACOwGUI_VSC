@@ -196,11 +196,9 @@ class MyGUI:
         if not hasattr(self, 'routePlan'):
             messagebox.showinfo(title="Save results to file failed", message="There are no results to save!")
         else:
-            try:
-                save_route_plan_to_file(self.routePlan, fileName)
-                messagebox.showinfo(title="Save Results", message="Your route plan was successfully saved!")
-            except ValueError:
-                messagebox.showinfo(title="Save results to file failed", message="There are no results to save!")
+            save_route_plan_to_file(self.routePlan, fileName)
+            messagebox.showinfo(title="Save Results", message="Your route plan was successfully saved!")
+
 
     def load_from_file(self):
         fileName = "routePlan.txt"
@@ -254,10 +252,13 @@ class RouteSelectApp(ctk.CTk):
         self.frame.pack(padx=20, pady=20)  
         self.entry = ctk.CTkEntry(self.frame, placeholder_text="Enter a No. of a route (integer)", text_color='grey', width=300, height=40)  
         self.entry.pack(pady=10)  
+        self.entry.focus_set()
         self.submit_button = ctk.CTkButton(self.frame, text="Submit route", command=self.get_integer)  
         self.submit_button.pack(pady=10)  
+        self.bind('<Return>', self.get_integer)
+        self.bind('<KP_Enter>', self.get_integer)
 
-    def get_integer(self):  
+    def get_integer(self, event=None):  
         try:  
             self.value = int(self.entry.get())
             self.after(100, self.destroy())  # Schedule closing the application with a slight delay after submission

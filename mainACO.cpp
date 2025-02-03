@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <pybind11/stl.h>
 #include <vector>
+#include <thread>
 
 std::string results = "These are your results: \n\n";
 std::string *resultsPanel = &results;
@@ -62,7 +63,7 @@ std::string ACOfunct() {
     // Parameters and variables initialization
     int Iter = 0, maxIterations = 1000;
     double RunTime;
-    int MaxRunTime = 1200;
+    int MaxRunTime = 2400;
     std::time_t TimeI = std::time(nullptr);
     long double ObjDistGlobal = 20000000000;
     const long Arg = 10;
@@ -149,7 +150,7 @@ std::string ACOfunct() {
     double best, CapF, ExcessCapacity;
     std::vector<std::vector<int>> bestRoute(NumVeh, std::vector<int> (NumCustomers + 1));
     bool CapOverflowSW = false;
-
+    
     std::vector<long> Cap(NumVeh, 0);
     std::vector<long> CapCopy(NumVeh, 0);
     std::string CapList;
@@ -184,6 +185,9 @@ std::string ACOfunct() {
         int start = 1;
         std::iota(UnAllocNodes.begin(), UnAllocNodes.end(), start);
 
+        // Create an array of NumVeh threads objects
+        std::vector<std::thread> threads;
+        
         Cap = CapCopy;
         
         // Rank vehicle capacities
@@ -460,113 +464,21 @@ std::string ACOfunct() {
         routeCopy = route;
 
         // DO until all vehicles are optimized
-        int vehIterator = 0;
-        do
+        for (int vehIterator = 0; vehIterator < numVehAssig + 1; vehIterator++)
         {
-            // Start iterations
-            int maxLSiterations{};
-            long double LS_Iter{};
+            threads.push_back(std::thread(optimizeRoute, vehIterator, std::ref(PosY), std::ref(objective),
+            std::ref(routeCopy), std::ref(route), std::ref(Dist)));
+            /*optimizeRoute(vehIterator, std::ref(PosY), std::ref(objective),
+            std::ref(routeCopy), std::ref(route), std::ref(Dist));*/
+        }
 
-            if (PosY[vehIterator] < 10)
-            {
-                maxLSiterations = permFunct(PosY[vehIterator], PosY[vehIterator]);
-            }else
-            {
-                maxLSiterations = PosY[vehIterator] * 3;
-            }
+        // Wait for all threads to complete
+        for (auto& t : threads)
+        {
+            t.join(); // this says "wait for this thread to be finnished and the move forward"
+        }
 
-            do
-            {
-                double bestTest = objective[vehIterator];
-                int test_pos1{}, test_pos2{};
-                bool sw2 = false, sw3 = false;
-
-                // Reset the copy for each iteration to make changes on it
-                for (int j = 0; j < PosY[vehIterator] + 1; j++)
-                {
-                    routeCopy[vehIterator][j] = route[vehIterator][j];
-                }
-
-                // Modify the copy of the route & evaluate if improved
-                for (int i = 1; i < PosY[vehIterator]; i++)
-                {
-                    int tmp = routeCopy[vehIterator][2];
-                    routeCopy[vehIterator][2] = routeCopy[vehIterator][i];
-                    routeCopy[vehIterator][i] = tmp;
-
-                    for (int j = 1; j < PosY[vehIterator] - 1; j++)
-                    {
-                        for (int k = j + 1; k < PosY[vehIterator]; k++)
-                        {
-                            for (int l = j; l < k + 1; l++)
-                            {
-                                routeCopy[vehIterator][l] = route[vehIterator][k - l + j];
-                            }
-
-                            double testObjective{};
-                            for (int n = 0; n < PosY[vehIterator]; n++)
-                            {
-                                testObjective += Dist[routeCopy[vehIterator][n]][routeCopy[vehIterator][n+1]];
-                            }
-
-                            if (testObjective < objective[vehIterator] && testObjective < bestTest)
-                            {
-                                bestTest = testObjective;
-                                test_pos1 = j;
-                                test_pos2 = k;
-                                sw2 = true;
-                                sw3 = true;
-                            }
-                            for (int m = 0; m < PosY[vehIterator] + 1; m++)
-                            {
-                                routeCopy[vehIterator][m] = route[vehIterator][m];
-                            }
-
-                        }
-
-                    }
-
-                }
-
-                // Update route when improved
-
-                if (sw2)
-                {
-                    // Save new distance and make new copy of the improved route
-
-                    objective[vehIterator] = bestTest;
-
-                    for (int l = test_pos1; l < test_pos2 + 1; l++)
-                    {
-                        routeCopy[vehIterator][l] = route[vehIterator][test_pos2 - l + test_pos1];
-                    }
-
-                    for (int l = 0; l < PosY[vehIterator] + 1; l++)
-                    {
-                        route[vehIterator][l] = routeCopy[vehIterator][l];
-                    }
-                    sw2 = false;
-
-                }
-                if (sw3)
-                {
-                    LS_Iter++;
-                    sw3 = false;
-                }else
-                {
-                    LS_Iter = 1E+17;
-                }
-
-            } while (LS_Iter < maxLSiterations);
-
-            objective[vehIterator] = 0;
-            for (int j = 0; j < PosY[vehIterator]; j++)
-            {
-                objective[vehIterator] += Dist[route[vehIterator][j]][route[vehIterator][j+1]];
-            }
-            vehIterator += 1;
-
-        } while (vehIterator < numVehAssig + 1);
+        std::lock_guard<std::mutex> lock(mtx);
 
         ////----------------------------------------------------------------
         //// End of local search procedure

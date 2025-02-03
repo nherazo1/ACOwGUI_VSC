@@ -1,7 +1,7 @@
 [
 {
   "directory": "/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/build",
-  "command": "/usr/bin/g++ -Dmodule_name_EXPORTS -isystem /Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/pybind11/include -isystem /Users/nherazo/opt/anaconda3/include/python3.9 -g -std=gnu++17 -arch arm64 -fPIC -fvisibility=hidden -o CMakeFiles/module_name.dir/mainACO.cpp.o -c /Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/mainACO.cpp",
+  "command": "/usr/bin/g++ -Dmodule_name_EXPORTS -isystem /Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/pybind11/include -isystem /Users/nherazo/opt/anaconda3/include/python3.9 -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fPIC -fvisibility=hidden -o CMakeFiles/module_name.dir/mainACO.cpp.o -c /Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/mainACO.cpp",
   "file": "/Users/nherazo/Developer/PythonProjects/ACOwGUI_VSC/ACOwGUI_VSC/mainACO.cpp",
   "output": "CMakeFiles/module_name.dir/mainACO.cpp.o"
 }
